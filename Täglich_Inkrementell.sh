@@ -9,3 +9,4 @@ ssh root@192.168.80.133 bash /var/backup/backupscript.sh # Zieht die Dateien von
 rsync "$ziel/backupclient1.tar.gz" /home/backup/backup/client1/tag #--link-dest="/home/backup/backup/client1/tag/vordere_sicherung"
 
 rsync "$ziel/backupclient2.tar.gz" /home/backup/backup/client1/tag #--link-dest="/home/backup/backup/client2/tag/vordere_sicherung"
+§
