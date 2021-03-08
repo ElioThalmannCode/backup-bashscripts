@@ -15,26 +15,26 @@ if [ $1 == "t" ]; then
     echo 'Tägliche Sicherung wird gestartet'
     mkdir -p /home/thel/backup/client1/tag/
     #mkdir -p /home/thel/backup/client2/tag/
-    rsync "$ziel/$(date +%Y-%m-%d)_backupclient1.tar.gz" /home/thel/backup/client1/tag/ --link-dest=/home/thel/backup/client1/$2
-    #rsync "$ziel/$(date +%Y-%m-%d)_backupclient2.tar.gz" /home/thel/backup/client2/tag/ --link-dest=/home/thel/backup/client2/$2
+    rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient1.tar.gz" /home/thel/backup/client1/tag/ --link-dest=/home/thel/backup/client1/$2
+    #rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient2.tar.gz" /home/thel/backup/client2/tag/ --link-dest=/home/thel/backup/client2/$2
 elif [ $1 == "w" ]; then
     echo 'Wöchentliche Sicherung wird gestartet'
     mkdir -p /home/thel/backup/client1/woche/
     #mkdir -p /home/thel/backup/client2/woche/
-    rsync "$ziel/$(date +%Y-%m-%d)_backupclient1.tar.gz" /home/thel/backup/client1/woche/ --link-dest=/home/thel/backup/client1/$2
-    #rsync "$ziel/$(date +%Y-%m-%d)_backupclient2.tar.gz" /home/thel/backup/client2/woche/ --link-dest=/home/thel/backup/client2/$2
+    rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient1.tar.gz" /home/thel/backup/client1/woche/ --link-dest=/home/thel/backup/client1/$2
+    #rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient2.tar.gz" /home/thel/backup/client2/woche/ --link-dest=/home/thel/backup/client2/$2
 elif [ $1 == "m" ]; then
     echo 'Monatliche Sicherung wird gestartet'
     mkdir -p /home/thel/backup/client1/monat/
     #mkdir -p /home/thel/backup/client2/monat/
-    rsync "$ziel/$(date +%Y-%m-%d)_backupclient1.tar.gz" /home/thel/backup/client1/monat/
-    #rsync "$ziel/$(date +%Y-%m-%d)_backupclient2.tar.gz" /home/thel/backup/client2/monat/
+    rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient1.tar.gz" /home/thel/backup/client1/monat/
+    #rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient2.tar.gz" /home/thel/backup/client2/monat/
 elif [ $1 == "j" ]; then
     echo 'Jährliche Sicherung wird gestartet'
     mkdir -p /home/thel/backup/client1/jahr/
     #mkdir -p /home/thel/backup/client2/jahr/
-    rsync "$ziel/$(date +%Y-%m-%d)_backupclient1.tar.gz" /home/thel/backup/client1/jahr/
-    #rsync "$ziel/$(date +%Y-%m-%d)_backupclient2.tar.gz" /home/thel/backup/client2/jahr/
+    rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient1.tar.gz" /home/thel/backup/client1/jahr/
+    #rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient2.tar.gz" /home/thel/backup/client2/jahr/
 else
   echo 'fehlerhafte Eingabe'
 fi
