@@ -13,7 +13,7 @@ ziel="/home/thel/tmp/$(date +%Y-%m-%d)"
 # Führt das Script auf dem Computer backupclient1 aus
 ssh root@192.168.80.132 bash /var/backup/Clientseitiges_Script_Client_1.sh # Zieht die Dateien von dem 1.Client auf den Server im Verzeichnis "/home/backup/tmp/{aktuelles_datum}/{aktuelles_datum}backupclient1.tar.gz"
 # Führt das Script auf dem Computer backupclient2 aus
-ssh root@192.168.80.133 bash /var/backup/Clientseitiges_Script_Client_2.sh # Zieht die Dateien von dem 2.Client auf den Server im Verzeichnis "/home/backup/tmp/{aktuelles_datum}/{aktuelles_datum}backupclient2.tar.gz"
+ssh root@192.168.80.135 bash /var/backup/Clientseitiges_Script_Client_2.sh # Zieht die Dateien von dem 2.Client auf den Server im Verzeichnis "/home/backup/tmp/{aktuelles_datum}/{aktuelles_datum}backupclient2.tar.gz"
 
 if [ $1 == "t" ]; then
     echo 'Tägliche Sicherung wird gestartet'

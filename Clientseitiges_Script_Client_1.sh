@@ -6,7 +6,7 @@
 # definiert Ziel auf Backupserver
 ziel="/home/thel/tmp/$(date +%Y-%m-%d)"
 # definiert den Namen des Backups
-filename="$(date +%Y-%m-%d)_backupclient2.tar.gz"
+filename="$(date +%Y-%m-%d)_backupclient1.tar.gz"
 # Klebt Dateien zusammen und komprimiert sie.
 tar -czvf $filename /home/thel/Documents /home/thel/Pictures # <---- Hier kann man die Daten auswählen
 # Erstellt einen Ordner mit dem aktuellen Datum
