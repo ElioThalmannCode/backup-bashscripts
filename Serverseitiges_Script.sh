@@ -1,4 +1,8 @@
 #!/bin/bash
+# Elio Thalmann
+# Modul 143
+# Serverseitiges Script
+#
 # t=Täglich Inkrementell
 # w=Wöchentlich Differenziell
 # m=Monatlich Vollsicherung
@@ -38,3 +42,5 @@ elif [ $1 == "j" ]; then
 else
   echo 'fehlerhafte Eingabe'
 fi
+
+rm -r /home/thel/tmp/$(date +%Y-%m-%d)
