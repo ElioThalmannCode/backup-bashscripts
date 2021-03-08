@@ -1,5 +1,5 @@
 #!bin/bash
-ziel="/home/backup/tmp/$(date +%Y-%m-%d)"
+ziel="/home/thel/tmp/$(date +%Y-%m-%d)"
 filename="backupclient1.tar.gz"
 tar -czvf $filename /home/thel/Documents /home/thel/Pictures
 ssh backup@192.168.80.131 mkdir -p $ziel
