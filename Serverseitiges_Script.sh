@@ -17,30 +17,46 @@ ssh root@192.168.80.135 bash /var/backup/Clientseitiges_Script_Client_2.sh # Zie
 
 if [ $1 == "t" ]; then
     echo 'Tägliche Sicherung wird gestartet'
+    # Erstellt den Ordner wo das Backup erstellt wird.
     mkdir -p /home/thel/backup/client1/tag/$(date +%Y-%m-%d)
+    # Erstellt den Ordner wo das Backup erstellt wird.
     mkdir -p /home/thel/backup/client2/tag/$(date +%Y-%m-%d)
+    # Holt die Daten aus dem temporären Ordner und tut ihn in den Backupordner
     rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient1.tar.gz" /home/thel/backup/client1/tag/$(date +%Y-%m-%d) --link-dest=/home/thel/backup/client1/$2
+    # Holt die Daten aus dem temporären Ordner und tut ihn in den Backupordner
     rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient2.tar.gz" /home/thel/backup/client2/tag/$(date +%Y-%m-%d) --link-dest=/home/thel/backup/client2/$2
 elif [ $1 == "w" ]; then
     echo 'Wöchentliche Sicherung wird gestartet'
+    # Erstellt den Ordner wo das Backup erstellt wird.
     mkdir -p /home/thel/backup/client1/woche/$(date +%Y-%m-%d)
+    # Erstellt den Ordner wo das Backup erstellt wird.
     mkdir -p /home/thel/backup/client2/woche/$(date +%Y-%m-%d)
+    # Holt die Daten aus dem temporären Ordner und tut ihn in den Backupordner
     rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient1.tar.gz" /home/thel/backup/client1/woche/$(date +%Y-%m-%d) --link-dest=/home/thel/backup/client1/$2
+    # Holt die Daten aus dem temporären Ordner und tut ihn in den Backupordner
     rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient2.tar.gz" /home/thel/backup/client2/woche/ $(date +%Y-%m-%d)--link-dest=/home/thel/backup/client2/$2
 elif [ $1 == "m" ]; then
     echo 'Monatliche Sicherung wird gestartet'
+    # Erstellt den Ordner wo das Backup erstellt wird.
     mkdir -p /home/thel/backup/client1/monat/$(date +%Y-%m-%d)
+    # Erstellt den Ordner wo das Backup erstellt wird.
     mkdir -p /home/thel/backup/client2/monat/$(date +%Y-%m-%d)
+    # Holt die Daten aus dem temporären Ordner und tut ihn in den Backupordner
     rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient1.tar.gz" /home/thel/backup/client1/monat/$(date +%Y-%m-%d)
+    # Holt die Daten aus dem temporären Ordner und tut ihn in den Backupordner
     rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient2.tar.gz" /home/thel/backup/client2/monat/$(date +%Y-%m-%d)
 elif [ $1 == "j" ]; then
     echo 'Jährliche Sicherung wird gestartet'
+    # Erstellt den Ordner wo das Backup erstellt wird.
     mkdir -p /home/thel/backup/client1/jahr/$(date +%Y-%m-%d)
+    # Erstellt den Ordner wo das Backup erstellt wird.
     mkdir -p /home/thel/backup/client2/jahr/$(date +%Y-%m-%d)
+    # Holt die Daten aus dem temporären Ordner und tut ihn in den Backupordner
     rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient1.tar.gz" /home/thel/backup/client1/jahr/$(date +%Y-%m-%d)
+    # Holt die Daten aus dem temporären Ordner und tut ihn in den Backupordner
     rsync -av "$ziel/$(date +%Y-%m-%d)_backupclient2.tar.gz" /home/thel/backup/client2/jahr/$(date +%Y-%m-%d)
 else
   echo 'fehlerhafte Eingabe'
 fi
-
+# Löscht den temporären Ordner
 rm -r /home/thel/tmp/$(date +%Y-%m-%d)
